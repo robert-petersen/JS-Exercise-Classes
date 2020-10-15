@@ -90,12 +90,13 @@ class Car {
     }
     else{
       for(let i = 0; i < distance; i++){
-        this.tank -= i/this.milesPerGallon;
+        let tank = this.tank;
+        tank -= i/this.milesPerGallon;
         console.log(this.tank);
-        if(this.tank <= 0){
+        if(tank <= 0){
           this.tank = 0;
           this.odometer += i;
-          return `I ran out of gas at ${this.odometer}.`;
+          return `I ran out of gas at ${this.odometer} miles!`;
         }
       }
     }
